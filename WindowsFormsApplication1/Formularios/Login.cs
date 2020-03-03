@@ -13,14 +13,15 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1.Formularios
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
 
-        SqlConnection coneccion = new SqlConnection("server=FEDERICO-PC\\SQLEXPRESS ; database=prueba ; integrated security = true");
+        SqlConnection coneccion = new SqlConnection("server=.\\SQL_UAI ; database=prueba ; integrated security = true");
+        //SqlConnection coneccion = new SqlConnection("server=FEDERICO-PC\\SQLEXPRESS ; database=prueba ; integrated security = true");
         public void Logear(string usuarionom, string contraseña)
         {
             try
@@ -35,7 +36,14 @@ namespace WindowsFormsApplication1.Formularios
 
                 if (dt.Rows.Count == 1)
                 {
-                    MessageBox.Show("linda rey");
+                    this.Hide();
+                    FrmMenu frm = new FrmMenu();
+
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrecta");
                 }
 
             }
@@ -55,9 +63,17 @@ namespace WindowsFormsApplication1.Formularios
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btningresar_OnClick(object sender, EventArgs e)
         {
-            Logear(this.textBox1.Text, this.textBox2.Text);
+            Logear(this.txtusuario.Text, this.txtcontraseña.Text);
+
+        }
+
+       
+
+        private void txtcontraseña_TextChanged(object sender, EventArgs e)
+        {
+            txtcontraseña.PasswordChar = '*';
 
         }
     }

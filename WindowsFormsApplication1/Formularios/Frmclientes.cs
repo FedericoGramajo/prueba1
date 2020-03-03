@@ -190,8 +190,7 @@ namespace WindowsFormsApplication1.Formularios
         private void btnusuario_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            FrmUsuarios frm = new FrmUsuarios();
+            FrmMenu frm = new FrmMenu();
 
             frm.Show();
         }

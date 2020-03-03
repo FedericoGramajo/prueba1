@@ -166,7 +166,7 @@
             this.groupBox2.Controls.Add(this.dtclientes);
             this.groupBox2.Location = new System.Drawing.Point(27, 266);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(508, 161);
+            this.groupBox2.Size = new System.Drawing.Size(508, 136);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -179,7 +179,7 @@
             this.dtclientes.Name = "dtclientes";
             this.dtclientes.ReadOnly = true;
             this.dtclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtclientes.Size = new System.Drawing.Size(508, 156);
+            this.dtclientes.Size = new System.Drawing.Size(508, 124);
             this.dtclientes.TabIndex = 0;
             this.dtclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtclientes_CellClick);
             // 
@@ -197,7 +197,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.microsoft;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(225, 94);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -214,7 +214,7 @@
             // 
             // btnusuario
             // 
-            this.btnusuario.Location = new System.Drawing.Point(472, 86);
+            this.btnusuario.Location = new System.Drawing.Point(225, 415);
             this.btnusuario.Name = "btnusuario";
             this.btnusuario.Size = new System.Drawing.Size(75, 23);
             this.btnusuario.TabIndex = 18;

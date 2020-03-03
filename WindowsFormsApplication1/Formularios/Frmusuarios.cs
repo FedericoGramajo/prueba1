@@ -204,7 +204,13 @@ namespace WindowsFormsApplication1.Formularios
 
         }
 
-     
+        private void btnvolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmMenu frm = new FrmMenu();
+
+            frm.Show();
+        }
     }
 
 

@@ -93,7 +93,8 @@ namespace WindowsFormsApplication1.Funciones
         protected static SqlConnection ConexionSQL()
         {
             //SqlConnection coneccion = new SqlConnection(@"Data Source=(local);Initial Catalog=prueba; user id=octilc; password=1214lcm");
-            SqlConnection coneccion = new SqlConnection("server=FEDERICO-PC\\SQLEXPRESS ; database=prueba ; integrated security = true");
+            // SqlConnection coneccion = new SqlConnection("server=FEDERICO-PC\\SQLEXPRESS ; database=prueba ; integrated security = true");
+            SqlConnection coneccion = new SqlConnection("server=.\\SQL_UAI ; database=prueba ; integrated security = true");
             return coneccion;
 
         }
