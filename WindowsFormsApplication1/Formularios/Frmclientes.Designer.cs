@@ -45,7 +45,7 @@
             this.lblempresa = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtidcliente = new System.Windows.Forms.TextBox();
-            this.btnusuario = new System.Windows.Forms.Button();
+            this.btnvolver = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtclientes)).BeginInit();
@@ -212,22 +212,22 @@
             this.txtidcliente.TabIndex = 16;
             this.txtidcliente.Text = "0";
             // 
-            // btnusuario
+            // btnvolver
             // 
-            this.btnusuario.Location = new System.Drawing.Point(225, 415);
-            this.btnusuario.Name = "btnusuario";
-            this.btnusuario.Size = new System.Drawing.Size(75, 23);
-            this.btnusuario.TabIndex = 18;
-            this.btnusuario.Text = "usuarios";
-            this.btnusuario.UseVisualStyleBackColor = true;
-            this.btnusuario.Click += new System.EventHandler(this.btnusuario_Click);
+            this.btnvolver.Location = new System.Drawing.Point(27, 415);
+            this.btnvolver.Name = "btnvolver";
+            this.btnvolver.Size = new System.Drawing.Size(75, 23);
+            this.btnvolver.TabIndex = 18;
+            this.btnvolver.Text = "Volver";
+            this.btnvolver.UseVisualStyleBackColor = true;
+            this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);
             // 
             // Frmclientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 450);
-            this.Controls.Add(this.btnusuario);
+            this.Controls.Add(this.btnvolver);
             this.Controls.Add(this.txtidcliente);
             this.Controls.Add(this.lblempresa);
             this.Controls.Add(this.pictureBox1);
@@ -265,7 +265,7 @@
         private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.DataGridView dtclientes;
         private System.Windows.Forms.TextBox txtidcliente;
-        private System.Windows.Forms.Button btnusuario;
+        private System.Windows.Forms.Button btnvolver;
     }
 }
 

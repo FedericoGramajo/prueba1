@@ -15,10 +15,12 @@ namespace WindowsFormsApplication1.Formularios
 {
     public partial class Frmclientes : Form
     {
+        DataTable r;
         List<Cliente> lista = new List<Cliente>();
         Cliente cliente;
-        public Frmclientes()
+        public Frmclientes(DataTable q)
         {
+            r = q;
             InitializeComponent();
         }
 
@@ -26,10 +28,10 @@ namespace WindowsFormsApplication1.Formularios
         {
             lista = FuncionesClientes.Mostrar();
             dtclientes.DataSource = lista;
-           /* if (dtclientes.Rows.Count != 0)
+            if (dtclientes.Rows.Count != 0)
             {
                 dtclientes.Columns["Idcliente"].Visible = false;
-            }*/
+            }
         }
 
 
@@ -40,7 +42,7 @@ namespace WindowsFormsApplication1.Formularios
 
             dtclientes.DataSource = null;
             dtclientes.DataSource = lista;
-            //dtclientes.Columns["idcliente"].Visible = false;
+            dtclientes.Columns["idcliente"].Visible = false;
          
 
 
@@ -187,10 +189,10 @@ namespace WindowsFormsApplication1.Formularios
 
         }
 
-        private void btnusuario_Click(object sender, EventArgs e)
+        private void btnvolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FrmMenu frm = new FrmMenu();
+            FrmMenu frm = new FrmMenu(r);
 
             frm.Show();
         }

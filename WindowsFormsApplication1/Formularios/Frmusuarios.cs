@@ -14,10 +14,13 @@ namespace WindowsFormsApplication1.Formularios
 {
     public partial class FrmUsuarios : Form
     {
+        DataTable f;
         List<Usuario> lista = new List<Usuario>();
         Usuario usuario;
-        public FrmUsuarios()
+        public FrmUsuarios(DataTable a)
         {
+
+            f = a;
             InitializeComponent();
         }
 
@@ -207,7 +210,7 @@ namespace WindowsFormsApplication1.Formularios
         private void btnvolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FrmMenu frm = new FrmMenu();
+            FrmMenu frm = new FrmMenu(f);
 
             frm.Show();
         }

@@ -13,21 +13,21 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1.Formularios
 {
-    public partial class Login : Form
+    public partial class FrmLogin : Form
     {
-        public Login()
+        public FrmLogin()
         {
             InitializeComponent();
         }
 
-        SqlConnection coneccion = new SqlConnection("server=.\\SQL_UAI ; database=prueba ; integrated security = true");
+        SqlConnection con = new SqlConnection("server=.\\SQL_UAI ; database=prueba ; integrated security = true");
         //SqlConnection coneccion = new SqlConnection("server=FEDERICO-PC\\SQLEXPRESS ; database=prueba ; integrated security = true");
         public void Logear(string usuarionom, string contraseña)
         {
             try
             {
-                coneccion.Open();
-                SqlCommand cmd = new SqlCommand("SELECT usuarionom from usuario where usuarionom= @nomusu  AND contraseña = @pass", coneccion);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT usuarionom from usuario where usuarionom= @nomusu  AND contraseña = @pass", con);
                 cmd.Parameters.AddWithValue("nomusu", usuarionom);
                 cmd.Parameters.AddWithValue("pass", contraseña);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -36,8 +36,10 @@ namespace WindowsFormsApplication1.Formularios
 
                 if (dt.Rows.Count == 1)
                 {
+
+
                     this.Hide();
-                    FrmMenu frm = new FrmMenu();
+                    FrmMenu frm = new FrmMenu(dt);
 
                     frm.Show();
                 }
@@ -54,7 +56,7 @@ namespace WindowsFormsApplication1.Formularios
             }
             finally
             {
-                coneccion.Close();
+                con.Close();
             }
 
 
@@ -76,5 +78,7 @@ namespace WindowsFormsApplication1.Formularios
             txtcontraseña.PasswordChar = '*';
 
         }
+
+       
     }
 }

@@ -49,11 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Login.cs">
+    <Compile Include="Formularios\FrmNotaPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Formularios\FrmNotaPedido.Designer.cs">
+      <DependentUpon>FrmNotaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frmclientes.cs">
       <SubType>Form</SubType>
@@ -69,7 +75,9 @@
     </Compile>
     <Compile Include="Funciones\FuncionesClientes.cs" />
     <Compile Include="Funciones\FuncionesLogin.cs" />
+    <Compile Include="Funciones\FuncionesNotaPedidos.cs" />
     <Compile Include="Funciones\FuncionesUsuarios.cs" />
+    <Compile Include="Funciones\listausu.cs" />
     <Compile Include="Funciones\Sqlcliente.cs" />
     <Compile Include="Objetos\Cliente.cs" />
     <Compile Include="Objetos\Login.cs" />
@@ -82,11 +90,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frmclientes.resx">
       <DependentUpon>Frmclientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmNotaPedido.resx">
+      <DependentUpon>FrmNotaPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frmusuarios.resx">
       <DependentUpon>Frmusuarios.cs</DependentUpon>

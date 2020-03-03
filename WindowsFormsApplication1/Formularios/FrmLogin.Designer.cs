@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1.Formularios
 {
-    partial class Login
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,7 @@
             // 
             this.lblcontraseña.AutoSize = true;
             this.lblcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcontraseña.Location = new System.Drawing.Point(26, 115);
+            this.lblcontraseña.Location = new System.Drawing.Point(26, 103);
             this.lblcontraseña.Name = "lblcontraseña";
             this.lblcontraseña.Size = new System.Drawing.Size(81, 17);
             this.lblcontraseña.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // txtcontraseña
             // 
-            this.txtcontraseña.Location = new System.Drawing.Point(136, 112);
+            this.txtcontraseña.Location = new System.Drawing.Point(136, 100);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(176, 20);
             this.txtcontraseña.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // btningresar
             // 
-            this.btningresar.Location = new System.Drawing.Point(163, 164);
+            this.btningresar.Location = new System.Drawing.Point(184, 138);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(75, 23);
             this.btningresar.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 221);
+            this.ClientSize = new System.Drawing.Size(401, 176);
             this.Controls.Add(this.btningresar);
             this.Controls.Add(this.lblbienvenido);
             this.Controls.Add(this.txtcontraseña);
@@ -104,7 +104,6 @@
             this.Controls.Add(this.txtusuario);
             this.Name = "Login";
             this.Text = "Form1";
-
             this.ResumeLayout(false);
             this.PerformLayout();
 

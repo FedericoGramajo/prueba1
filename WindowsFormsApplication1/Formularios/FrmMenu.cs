@@ -12,8 +12,11 @@ namespace WindowsFormsApplication1.Formularios
 {
     public partial class FrmMenu : Form
     {
-        public FrmMenu()
+        DataTable dt;
+        public FrmMenu( DataTable a)
         {
+            dt = a;
+
             InitializeComponent();
         }
 
@@ -21,7 +24,7 @@ namespace WindowsFormsApplication1.Formularios
         {
             this.Hide();
 
-            Frmclientes frm = new Frmclientes();
+            Frmclientes frm = new Frmclientes(dt);
 
             frm.Show();
         }
@@ -35,7 +38,16 @@ namespace WindowsFormsApplication1.Formularios
         {
             this.Hide();
 
-            FrmUsuarios frm = new FrmUsuarios();
+            FrmUsuarios frm = new FrmUsuarios(dt);
+
+            frm.Show();
+        }
+
+        private void btnnotadepedido_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            FrmNotaPedido frm = new FrmNotaPedido(dt);
 
             frm.Show();
         }

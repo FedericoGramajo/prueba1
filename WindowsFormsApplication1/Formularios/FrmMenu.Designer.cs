@@ -62,6 +62,7 @@
             this.btnnotadepedido.TabIndex = 5;
             this.btnnotadepedido.Text = "Nota de Pedido";
             this.btnnotadepedido.UseVisualStyleBackColor = true;
+            this.btnnotadepedido.Click += new System.EventHandler(this.btnnotadepedido_Click);
             // 
             // lblmenu
             // 
@@ -74,7 +75,7 @@
             this.lblmenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblmenu.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Menu
+            // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,7 +84,7 @@
             this.Controls.Add(this.btnnotadepedido);
             this.Controls.Add(this.btncliente);
             this.Controls.Add(this.btnousuario);
-            this.Name = "Menu";
+            this.Name = "FrmMenu";
             this.ResumeLayout(false);
 
         }
