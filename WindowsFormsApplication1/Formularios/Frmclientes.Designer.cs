@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnlimpiar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnlimpiar);
             this.groupBox1.Controls.Add(this.btneliminar);
             this.groupBox1.Controls.Add(this.btnmodificar);
             this.groupBox1.Controls.Add(this.btnagregar);
@@ -71,9 +73,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.Location = new System.Drawing.Point(387, 119);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnlimpiar.Size = new System.Drawing.Size(101, 23);
+            this.btnlimpiar.TabIndex = 18;
+            this.btnlimpiar.Text = "Limpiar Formulario";
+            this.btnlimpiar.UseVisualStyleBackColor = true;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
+            // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(373, 119);
+            this.btneliminar.Location = new System.Drawing.Point(281, 119);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(75, 23);
             this.btneliminar.TabIndex = 17;
@@ -83,7 +96,7 @@
             // 
             // btnmodificar
             // 
-            this.btnmodificar.Location = new System.Drawing.Point(198, 125);
+            this.btnmodificar.Location = new System.Drawing.Point(135, 119);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(75, 23);
             this.btnmodificar.TabIndex = 16;
@@ -93,7 +106,7 @@
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(41, 119);
+            this.btnagregar.Location = new System.Drawing.Point(6, 119);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
             this.btnagregar.TabIndex = 15;
@@ -214,7 +227,7 @@
             // 
             // btnvolver
             // 
-            this.btnvolver.Location = new System.Drawing.Point(27, 415);
+            this.btnvolver.Location = new System.Drawing.Point(497, 415);
             this.btnvolver.Name = "btnvolver";
             this.btnvolver.Size = new System.Drawing.Size(75, 23);
             this.btnvolver.TabIndex = 18;
@@ -266,6 +279,7 @@
         private System.Windows.Forms.DataGridView dtclientes;
         private System.Windows.Forms.TextBox txtidcliente;
         private System.Windows.Forms.Button btnvolver;
+        private System.Windows.Forms.Button btnlimpiar;
     }
 }
 

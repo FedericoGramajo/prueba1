@@ -65,10 +65,10 @@ namespace WindowsFormsApplication1.Formularios
                 {
                  if (FuncionesClientes.Agregar(cliente))
                      {
-                  DataTable tabla_ultimo_id   = Sqlcliente.Mostrar("select top 1 idcliente from cliente order by idcliente desc ");
-                   DataRow Filtro = tabla_ultimo_id.Select().FirstOrDefault();
-                    cliente.Idcliente = Filtro.Field<int>("idcliente");
-                    lista.Add(cliente);
+                        DataTable tabla_ultimo_id   = Sqlcliente.Mostrar("select top 1 idcliente from cliente order by idcliente desc ");
+                        DataRow Filtro = tabla_ultimo_id.Select().FirstOrDefault();
+                        cliente.Idcliente = Filtro.Field<int>("idcliente");
+                        lista.Add(cliente);
                         MessageBox.Show("El cliente fue agregago con exito");
                         RecargarLista();
                         txtnombre.Text = "";
@@ -94,9 +94,9 @@ namespace WindowsFormsApplication1.Formularios
         {
             if (txtidcliente.Text != "0")
             {
-                cliente = (Cliente)dtclientes.CurrentRow.DataBoundItem;
-                lista.Remove(cliente);
+
                 cliente = new Cliente();
+
                 cliente.Idcliente = Convert.ToInt16(txtidcliente.Text);
                 cliente.Nombre = txtnombre.Text;
                 cliente.Dni = txtdni.Text;
@@ -107,10 +107,14 @@ namespace WindowsFormsApplication1.Formularios
                 {
                     if (FuncionesClientes.Modificar(cliente))
                     {
-
-                        lista.Add(cliente);
+                        var filtro = lista.Where(s => s.Idcliente == cliente.Idcliente).FirstOrDefault();
+                        filtro.Nombre = cliente.Nombre;
+                        filtro.Dni = cliente.Dni;
+                        filtro.Direccion = cliente.Direccion;
+                        filtro.Telefono = cliente.Telefono;
 
                         MessageBox.Show("El cliente fue modificado con exito");
+
                         RecargarLista();
                         txtidcliente.Text = "";
                         txtnombre.Text = "";
@@ -135,16 +139,13 @@ namespace WindowsFormsApplication1.Formularios
         {
             if (txtidcliente.Text != "0")
             {
-                cliente = (Cliente)dtclientes.CurrentRow.DataBoundItem;
-                lista.Remove(cliente);
-                cliente = new Cliente();
-                cliente.Idcliente = Convert.ToInt16(txtidcliente.Text);
-                if (txtnombre.Text != "" && txtdni.Text != "" && txtdomicilio.Text != "" && txttelefono.Text != "")
-                {
-                    if (FuncionesClientes.Eliminar(cliente))
+               
+                    if (FuncionesClientes.Eliminar(Convert.ToInt16(txtidcliente.Text)))
                     {
 
                         MessageBox.Show("El cliente fue eliminado con exito");
+                        Cliente filtro = lista.Where(s => s.Idcliente == Convert.ToInt16(txtidcliente.Text)).FirstOrDefault();
+                        lista.Remove(filtro);
                         RecargarLista();
                         txtidcliente.Text = "";
                         txtnombre.Text = "";
@@ -156,11 +157,7 @@ namespace WindowsFormsApplication1.Formularios
                     {
                         MessageBox.Show("Ha ocurrido un error en el sistema, intente en unos momentos");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("El cliente no fue eliminado, por favor revise los datos");
-                }
+                
             }
             else
             {
@@ -183,8 +180,8 @@ namespace WindowsFormsApplication1.Formularios
             txtidcliente.Text = dtclientes.Rows[e.RowIndex].Cells["idcliente"].Value.ToString();
             txtnombre.Text = dtclientes.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
             txtdni.Text = dtclientes.Rows[e.RowIndex].Cells["dni"].Value.ToString();
-            txtdomicilio.Text = dtclientes.Rows[e.RowIndex].Cells["telefono"].Value.ToString();
-            txttelefono.Text = dtclientes.Rows[e.RowIndex].Cells["direccion"].Value.ToString();
+            txtdomicilio.Text = dtclientes.Rows[e.RowIndex].Cells["direccion"].Value.ToString();
+            txttelefono.Text = dtclientes.Rows[e.RowIndex].Cells["telefono"].Value.ToString();
            
 
         }
@@ -195,6 +192,15 @@ namespace WindowsFormsApplication1.Formularios
             FrmMenu frm = new FrmMenu(r);
 
             frm.Show();
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            txtidcliente.Text = "";
+            txtnombre.Text = "";
+            txtdni.Text = "";
+            txtdomicilio.Text = "";
+            txttelefono.Text = "";
         }
     }
 }

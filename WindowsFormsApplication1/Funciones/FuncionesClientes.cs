@@ -12,8 +12,7 @@ namespace WindowsFormsApplication1.Funciones
 {
    public static class FuncionesClientes
     {
-
-        
+                
         public static List<Cliente> Mostrar()
         {
             List<Cliente> lista = new List<Cliente>();
@@ -87,12 +86,12 @@ namespace WindowsFormsApplication1.Funciones
         }
 
 
-        public static Boolean Eliminar(Cliente cliente )
+        public static Boolean Eliminar(int Idcliente )
         {
             try
             {
 
-                int FilasAfectadas = Sqlcliente.Enviar($"delete from cliente where idcliente = '{cliente.Idcliente}' ");
+                int FilasAfectadas = Sqlcliente.Enviar($"delete from cliente where idcliente = '{Idcliente}' ");
                 if (FilasAfectadas > 0)
                 {
                     return true;

@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 
 
 
+
 namespace WindowsFormsApplication1.Funciones
 {
     public static class FuncionesUsuarios
@@ -96,12 +97,12 @@ namespace WindowsFormsApplication1.Funciones
             }
         }
 
-        public static Boolean Eliminar(Usuario usuario)
+        public static Boolean Eliminar(int Idusuario)
         {
             try
             {
 
-                int FilasAfectadas = Sqlcliente.Enviar($"delete from usuario where idusuario = '{usuario.IdUsuario}' ");
+                int FilasAfectadas = Sqlcliente.Enviar($"delete from usuario where idusuario = '{Idusuario}' ");
                 if (FilasAfectadas > 0)
                 {
                     return true;

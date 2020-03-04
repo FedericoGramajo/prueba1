@@ -50,6 +50,7 @@
             this.btneliminar = new System.Windows.Forms.Button();
             this.txtidusuario = new System.Windows.Forms.TextBox();
             this.btnvolver = new System.Windows.Forms.Button();
+            this.btnlimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtusuario)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -66,7 +67,7 @@
             this.lblempresa.TabIndex = 19;
             this.lblempresa.Text = "Empresa";
             this.lblempresa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblempresa.Click += new System.EventHandler(this.lblempresa_Click);
+          
             // 
             // pictureBox1
             // 
@@ -162,7 +163,7 @@
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(121, 161);
+            this.btnagregar.Location = new System.Drawing.Point(23, 161);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
             this.btnagregar.TabIndex = 15;
@@ -172,7 +173,7 @@
             // 
             // btnmodificar
             // 
-            this.btnmodificar.Location = new System.Drawing.Point(236, 161);
+            this.btnmodificar.Location = new System.Drawing.Point(150, 161);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(75, 23);
             this.btnmodificar.TabIndex = 16;
@@ -213,6 +214,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnlimpiar);
             this.groupBox1.Controls.Add(this.btneliminar);
             this.groupBox1.Controls.Add(this.lblcontraseña);
             this.groupBox1.Controls.Add(this.txtcontraseña);
@@ -236,7 +238,7 @@
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(348, 161);
+            this.btneliminar.Location = new System.Drawing.Point(267, 161);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(75, 23);
             this.btneliminar.TabIndex = 22;
@@ -254,7 +256,7 @@
             // 
             // btnvolver
             // 
-            this.btnvolver.Location = new System.Drawing.Point(509, 12);
+            this.btnvolver.Location = new System.Drawing.Point(481, 454);
             this.btnvolver.Name = "btnvolver";
             this.btnvolver.Size = new System.Drawing.Size(75, 23);
             this.btnvolver.TabIndex = 23;
@@ -262,11 +264,22 @@
             this.btnvolver.UseVisualStyleBackColor = true;
             this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);
             // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.Location = new System.Drawing.Point(379, 161);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnlimpiar.Size = new System.Drawing.Size(101, 23);
+            this.btnlimpiar.TabIndex = 23;
+            this.btnlimpiar.Text = "Limpiar Formulario";
+            this.btnlimpiar.UseVisualStyleBackColor = true;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
+            // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 450);
+            this.ClientSize = new System.Drawing.Size(595, 488);
             this.Controls.Add(this.btnvolver);
             this.Controls.Add(this.txtidusuario);
             this.Controls.Add(this.lblempresa);
@@ -310,5 +323,6 @@
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.TextBox txtidusuario;
         private System.Windows.Forms.Button btnvolver;
+        private System.Windows.Forms.Button btnlimpiar;
     }
 }

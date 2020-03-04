@@ -40,27 +40,16 @@ namespace WindowsFormsApplication1.Formularios
             dtusuario.DataSource = null;
             dtusuario.DataSource = lista;
             dtusuario.Columns["idusuario"].Visible = false;
+            dtusuario.Columns["contraseña"].Visible = false;
 
         }
 
         //-*-------------------------------------------------------
-        private void lblempresa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
-
-
-
-
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
+
             usuario.Nombre = txtnombre.Text;
             usuario.Dni = txtdni.Text;
             usuario.Direccion = txtdomicilio.Text;
@@ -72,6 +61,9 @@ namespace WindowsFormsApplication1.Formularios
             {
                 if (FuncionesUsuarios.Agregar(usuario))
                 {
+                    DataTable tabla_ultimo_id = Sqlcliente.Mostrar("select top 1 idusuario from usuario order by idusuario desc ");
+                    DataRow Filtro = tabla_ultimo_id.Select().FirstOrDefault();
+                    usuario.IdUsuario= Filtro.Field<int>("idusuario");
                     lista.Add(usuario);
                     MessageBox.Show("Se ha registro correctamente");
                     RecargarLista();
@@ -95,9 +87,12 @@ namespace WindowsFormsApplication1.Formularios
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
-            usuario = (Usuario)dtusuario.CurrentRow.DataBoundItem;
-            lista.Remove(usuario);
+
+            if (txtidusuario.Text != "0")
+            {
+            
             usuario = new Usuario();
+
             usuario.IdUsuario = Convert.ToInt16(txtidusuario.Text);
             usuario.Nombre = txtnombre.Text;
             usuario.Dni = txtdni.Text;
@@ -105,15 +100,26 @@ namespace WindowsFormsApplication1.Formularios
             usuario.Telefono = txttelefono.Text;
             usuario.UsuarioNom = txtnomusuario.Text;
             usuario.Contraseña = txtcontraseña.Text;
-
-            if (txtidusuario.Text != "0")
-            {
-                    if (txtnombre.Text != "" && txtdni.Text != "" && txtdomicilio.Text != "" && txttelefono.Text != "" && txtnomusuario.Text != "" && txtcontraseña.Text != "")
+                var filtro2 = lista.Where(s => s.IdUsuario == usuario.IdUsuario).FirstOrDefault();
+                
+                if (txtnombre.Text != "" && txtdni.Text != "" && txtdomicilio.Text != "" && txttelefono.Text != "" && txtnomusuario.Text != "" && txtcontraseña.Text != "")
                     {
-                    if (FuncionesUsuarios.Modificar(usuario))
+                    if (filtro2.Contraseña == usuario.Contraseña)
+                    {
+                        if (FuncionesUsuarios.Modificar(usuario))
                         {
-                            lista.Add(usuario);
+
+                            var filtro = lista.Where(s => s.IdUsuario == usuario.IdUsuario).FirstOrDefault();
+                            filtro.Nombre = usuario.Nombre;
+                            filtro.Dni = usuario.Dni;
+                            filtro.Direccion = usuario.Direccion;
+                            filtro.Telefono = usuario.Telefono;
+                            filtro.UsuarioNom = usuario.UsuarioNom;
+                            
+
+
                             MessageBox.Show("El usuario fue modificado con exito");
+
                             RecargarLista();
                             txtnombre.Text = "";
                             txtdomicilio.Text = "";
@@ -121,11 +127,17 @@ namespace WindowsFormsApplication1.Formularios
                             txttelefono.Text = "";
                             txtnomusuario.Text = "";
                             txtcontraseña.Text = "";
+                            txtidusuario.Text = "";
                         }
                         else
                         {
                             MessageBox.Show("Ha ocurrido un error en el sistema, intente en unos momentos");
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta");
+                            }
                     }
                     else
                     {
@@ -146,16 +158,20 @@ namespace WindowsFormsApplication1.Formularios
             if (txtidusuario.Text != "0")
             {
                 usuario = (Usuario)dtusuario.CurrentRow.DataBoundItem;
-                lista.Remove(usuario);
                 usuario = new Usuario();
                 usuario.IdUsuario = Convert.ToInt16(txtidusuario.Text);
+                var filtro2 = lista.Where(s => s.IdUsuario == usuario.IdUsuario).FirstOrDefault();
 
-           
-                if (txtnombre.Text != "" && txtdni.Text != "" && txtdomicilio.Text != "" && txttelefono.Text != "" && txtnomusuario.Text != "" && txtcontraseña.Text != "")
+
+                if (filtro2.Contraseña == txtcontraseña.Text)
                 {
-                    if (FuncionesUsuarios.Eliminar(usuario))
+
+                    if (FuncionesUsuarios.Eliminar(Convert.ToInt16(txtidusuario.Text)))
                     {
+
                         MessageBox.Show("El Usuario fue eliminado correctamente");
+                        var filtro = lista.Where(s => s.IdUsuario == Convert.ToInt16(txtidusuario.Text)).FirstOrDefault();
+                        lista.Remove(filtro);
                         RecargarLista();
                         txtnombre.Text = "";
                         txtdomicilio.Text = "";
@@ -168,18 +184,27 @@ namespace WindowsFormsApplication1.Formularios
                     {
                         MessageBox.Show("Ha ocurrido un error en el sistema, intente en unos momentos");
                     }
-                    }
-                else
-                {
-                     MessageBox.Show("El usuario no fue eliminado, por favor revise los datos");
-                }
                 }
                 else
                 {
-                MessageBox.Show("Selecciones un usuario");
+                    MessageBox.Show("Contraseña incorrecta");
+                    txtcontraseña.Text = "";
                 }
-                
             }
+            else
+            {
+                MessageBox.Show("Selecciones un usuario");
+            }
+
+
+
+
+
+
+
+
+
+        } 
 
 
 
@@ -213,6 +238,17 @@ namespace WindowsFormsApplication1.Formularios
             FrmMenu frm = new FrmMenu(f);
 
             frm.Show();
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            txtnombre.Text = "";
+            txtdomicilio.Text = "";
+            txtdni.Text = "";
+            txttelefono.Text = "";
+            txtnomusuario.Text = "";
+            txtcontraseña.Text = "";
+            txtidusuario.Text = "";
         }
     }
 

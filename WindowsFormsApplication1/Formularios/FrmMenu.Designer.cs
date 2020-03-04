@@ -32,6 +32,7 @@
             this.btncliente = new System.Windows.Forms.Button();
             this.btnnotadepedido = new System.Windows.Forms.Button();
             this.lblmenu = new System.Windows.Forms.Label();
+            this.btnservicio = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnousuario
@@ -56,7 +57,7 @@
             // 
             // btnnotadepedido
             // 
-            this.btnnotadepedido.Location = new System.Drawing.Point(76, 166);
+            this.btnnotadepedido.Location = new System.Drawing.Point(76, 203);
             this.btnnotadepedido.Name = "btnnotadepedido";
             this.btnnotadepedido.Size = new System.Drawing.Size(142, 24);
             this.btnnotadepedido.TabIndex = 5;
@@ -73,13 +74,23 @@
             this.lblmenu.TabIndex = 6;
             this.lblmenu.Text = "Menu";
             this.lblmenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblmenu.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnservicio
+            // 
+            this.btnservicio.Location = new System.Drawing.Point(76, 162);
+            this.btnservicio.Name = "btnservicio";
+            this.btnservicio.Size = new System.Drawing.Size(142, 24);
+            this.btnservicio.TabIndex = 7;
+            this.btnservicio.Text = "Nuevo Servicio";
+            this.btnservicio.UseVisualStyleBackColor = true;
+            this.btnservicio.Click += new System.EventHandler(this.btnservicio_Click);
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 228);
+            this.ClientSize = new System.Drawing.Size(284, 281);
+            this.Controls.Add(this.btnservicio);
             this.Controls.Add(this.lblmenu);
             this.Controls.Add(this.btnnotadepedido);
             this.Controls.Add(this.btncliente);
@@ -95,5 +106,6 @@
         private System.Windows.Forms.Button btncliente;
         private System.Windows.Forms.Button btnnotadepedido;
         private System.Windows.Forms.Label lblmenu;
+        private System.Windows.Forms.Button btnservicio;
     }
 }

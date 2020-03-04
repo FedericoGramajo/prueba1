@@ -26,13 +26,10 @@ namespace WindowsFormsApplication1.Formularios
 
             Frmclientes frm = new Frmclientes(dt);
 
-            frm.Show();
+            frm.ShowDialog();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnousuario_Click(object sender, EventArgs e)
         {
@@ -40,7 +37,7 @@ namespace WindowsFormsApplication1.Formularios
 
             FrmUsuarios frm = new FrmUsuarios(dt);
 
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void btnnotadepedido_Click(object sender, EventArgs e)
@@ -49,7 +46,14 @@ namespace WindowsFormsApplication1.Formularios
 
             FrmNotaPedido frm = new FrmNotaPedido(dt);
 
-            frm.Show();
+            frm.ShowDialog();
+        }
+
+        private void btnservicio_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmServicios frm = new FrmServicios(dt);
+            frm.ShowDialog();
         }
     }
 }
