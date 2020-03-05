@@ -210,6 +210,11 @@ namespace WindowsFormsApplication1.Formularios
             txtfechadato.Text = "";
         }
 
-     
+        private void btnvolver_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmMenu frm = new FrmMenu(s);
+            frm.Show();
+        }
     }
 }

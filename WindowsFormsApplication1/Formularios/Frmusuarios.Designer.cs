@@ -47,10 +47,10 @@
             this.txtcontraseña = new System.Windows.Forms.TextBox();
             this.lblcontraseña = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnlimpiar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.txtidusuario = new System.Windows.Forms.TextBox();
             this.btnvolver = new System.Windows.Forms.Button();
-            this.btnlimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtusuario)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -67,7 +67,6 @@
             this.lblempresa.TabIndex = 19;
             this.lblempresa.Text = "Empresa";
             this.lblempresa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-          
             // 
             // pictureBox1
             // 
@@ -83,6 +82,8 @@
             // 
             this.dtusuario.AllowUserToAddRows = false;
             this.dtusuario.AllowUserToDeleteRows = false;
+            this.dtusuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtusuario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtusuario.Location = new System.Drawing.Point(0, 10);
             this.dtusuario.Name = "dtusuario";
@@ -236,6 +237,17 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.Location = new System.Drawing.Point(379, 161);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnlimpiar.Size = new System.Drawing.Size(101, 23);
+            this.btnlimpiar.TabIndex = 23;
+            this.btnlimpiar.Text = "Limpiar Formulario";
+            this.btnlimpiar.UseVisualStyleBackColor = true;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
+            // 
             // btneliminar
             // 
             this.btneliminar.Location = new System.Drawing.Point(267, 161);
@@ -263,17 +275,6 @@
             this.btnvolver.Text = "Volver";
             this.btnvolver.UseVisualStyleBackColor = true;
             this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);
-            // 
-            // btnlimpiar
-            // 
-            this.btnlimpiar.Location = new System.Drawing.Point(379, 161);
-            this.btnlimpiar.Name = "btnlimpiar";
-            this.btnlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnlimpiar.Size = new System.Drawing.Size(101, 23);
-            this.btnlimpiar.TabIndex = 23;
-            this.btnlimpiar.Text = "Limpiar Formulario";
-            this.btnlimpiar.UseVisualStyleBackColor = true;
-            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
             // 
             // FrmUsuarios
             // 

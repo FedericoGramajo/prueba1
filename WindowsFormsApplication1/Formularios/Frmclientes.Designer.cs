@@ -187,6 +187,8 @@
             // 
             this.dtclientes.AllowUserToAddRows = false;
             this.dtclientes.AllowUserToDeleteRows = false;
+            this.dtclientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtclientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtclientes.Location = new System.Drawing.Point(0, 5);
             this.dtclientes.Name = "dtclientes";

@@ -80,12 +80,13 @@
       <DependentUpon>FrmServicios.cs</DependentUpon>
     </Compile>
     <Compile Include="Funciones\FuncionesClientes.cs" />
-    <Compile Include="Funciones\FuncionesNotaPedidos.cs" />
     <Compile Include="Funciones\FuncionesServicios.cs" />
     <Compile Include="Funciones\FuncionesUsuarios.cs" />
     <Compile Include="Funciones\Sqlcliente.cs" />
     <Compile Include="Objetos\Cliente.cs" />
+    <Compile Include="Funciones\FuncionesPedido.cs" />
     <Compile Include="Objetos\Login.cs" />
+    <Compile Include="Objetos\NotaPedido.cs" />
     <Compile Include="Objetos\Servicio.cs" />
     <Compile Include="Objetos\Usuario.cs" />
     <Compile Include="Formularios\Frmusuarios.cs">

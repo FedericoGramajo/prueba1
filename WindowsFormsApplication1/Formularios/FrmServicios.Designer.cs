@@ -48,6 +48,7 @@
             this.txtunmedida = new System.Windows.Forms.TextBox();
             this.txtnomcorto = new System.Windows.Forms.TextBox();
             this.txtidservicio = new System.Windows.Forms.TextBox();
+            this.btnvolver = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtservicios)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -86,6 +87,8 @@
             // 
             this.dtservicios.AllowUserToAddRows = false;
             this.dtservicios.AllowUserToDeleteRows = false;
+            this.dtservicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtservicios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtservicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtservicios.Location = new System.Drawing.Point(0, 0);
             this.dtservicios.Name = "dtservicios";
@@ -244,11 +247,22 @@
             this.txtidservicio.TabIndex = 29;
             this.txtidservicio.Text = "0";
             // 
+            // btnvolver
+            // 
+            this.btnvolver.Location = new System.Drawing.Point(621, 456);
+            this.btnvolver.Name = "btnvolver";
+            this.btnvolver.Size = new System.Drawing.Size(75, 23);
+            this.btnvolver.TabIndex = 30;
+            this.btnvolver.Text = "Volver";
+            this.btnvolver.UseVisualStyleBackColor = true;
+            this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click_1);
+            // 
             // FrmServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 455);
+            this.ClientSize = new System.Drawing.Size(718, 487);
+            this.Controls.Add(this.btnvolver);
             this.Controls.Add(this.txtidservicio);
             this.Controls.Add(this.btninicio);
             this.Controls.Add(this.lblservicios);
@@ -288,5 +302,6 @@
         private System.Windows.Forms.TextBox txtnomcorto;
         private System.Windows.Forms.Button btnlimpiar;
         private System.Windows.Forms.TextBox txtidservicio;
+        private System.Windows.Forms.Button btnvolver;
     }
 }
