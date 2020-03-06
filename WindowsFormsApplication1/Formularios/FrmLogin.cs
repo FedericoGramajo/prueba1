@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1.Formularios
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT usuarionom from usuario where usuarionom= @nomusu  AND contraseña = @pass", con);
+                SqlCommand cmd = new SqlCommand("SELECT idusuario, usuarionom from usuario where usuarionom= @nomusu  AND contraseña = @pass", con);
                 cmd.Parameters.AddWithValue("nomusu", usuarionom);
                 cmd.Parameters.AddWithValue("pass", contraseña);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);

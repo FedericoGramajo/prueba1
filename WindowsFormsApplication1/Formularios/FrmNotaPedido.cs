@@ -9,19 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using WindowsFormsApplication1.Funciones;
-
+using WindowsFormsApplication1.Objetos;
 namespace WindowsFormsApplication1.Formularios
 {
     public partial class FrmNotaPedido : Form
     {
         DataTable dt;
+        List<Servicio> lista = new List<Servicio>();
+        public int guard = 0;
+        public int sum = 0;
         public FrmNotaPedido(DataTable e)
         {
             dt = e;
             InitializeComponent();
-            string usunom = dt.Rows[0][0].ToString();
-            textBox2.Text = usunom;
+            string idusu = dt.Rows[0][0].ToString();
+            txtidusuario.Text = idusu;
+            string usunom = dt.Rows[0][1].ToString();
+            txtusuarionom.Text = usunom;
+
         }
+
 
 
         SqlConnection coneccion = new SqlConnection("server=.\\SQL_UAI ; database=prueba ; integrated security = true");
@@ -71,6 +78,7 @@ namespace WindowsFormsApplication1.Formularios
                 while (dr.Read())
                 {
                     cajaTexto.AutoCompleteCustomSource.Add(dr["nomcorto"].ToString());
+
                 }
                 dr.Close();
 
@@ -90,23 +98,71 @@ namespace WindowsFormsApplication1.Formularios
 
         private void FrmNotaPedido_Load(object sender, EventArgs e)
         {
-            autocompletarcli(textBox1);
-            autocompletarserv(textBox3);
-            /* //cargar los datos para el autocomplete del textbox
-             textBox1.AutoCompleteCustomSource = Objetos.FuncionesPedido.AutoCompleClass.Autocomplete();
-             textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-             textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-             textBox2.AutoCompleteCustomSource = Objetos.FuncionesPedido.AutoCompleClass.Autocomplete();
-             textBox2.AutoCompleteMode = AutoCompleteMode.Suggest;
-             textBox2.AutoCompleteSource = AutoCompleteSource.CustomSource;
-             // Cargo los datos que tendra el combobox
+            autocompletarcli(txtclientenom);
+            autocompletarserv(txttiposerv);
 
-         }*/
+
+            lista = FuncionesServicios.Mostrar();
+            dtservicios.DataSource = lista;
+            if (dtservicios.Rows.Count != 0)
+            {
+                dtservicios.Columns["idservicio"].Visible = false;
+            }
+            
+
+            
         }
 
         private void btnnota_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnnuevoserv_Click(object sender, EventArgs e)
+        {
+            FrmServicios frm = new FrmServicios(dt);
+            frm.ShowDialog();
+        }
+
+        private void btnpedidos_Click(object sender, EventArgs e)
+        {
+            FrmPedidos frm = new FrmPedidos();
+            frm.ShowDialog();
+            
+        }
+
+        public void dtservicios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txttiposerv.Text = dtservicios.Rows[e.RowIndex].Cells["nomcorto"].Value.ToString();
+            txtidserv.Text = dtservicios.Rows[e.RowIndex].Cells["idservicio"].Value.ToString();
+            guard= Convert.ToInt16(dtservicios.Rows[e.RowIndex].Cells["montoxunmedida"].Value.ToString());
+
+            sum = sum +Convert.ToInt16( dtservicios.Rows[e.RowIndex].Cells["montoxunmedida"].Value.ToString());
+            lbltotal.Text = Convert.ToString(sum);
+           
+            
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            sum = sum - guard;
+            //sum = guard;
+            lbltotal.Text = Convert.ToString(sum);
+        }
+
+
+        /* //cargar los datos para el autocomplete del textbox
+textBox1.AutoCompleteCustomSource = Objetos.FuncionesPedido.AutoCompleClass.Autocomplete();
+textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+textBox2.AutoCompleteCustomSource = Objetos.FuncionesPedido.AutoCompleClass.Autocomplete();
+textBox2.AutoCompleteMode = AutoCompleteMode.Suggest;
+textBox2.AutoCompleteSource = AutoCompleteSource.CustomSource;
+// Cargo los datos que tendra el combobox
+
+}*/
     }
-}
+
+     
+    }
+
