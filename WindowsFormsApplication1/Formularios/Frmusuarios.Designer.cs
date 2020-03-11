@@ -107,28 +107,28 @@
             this.txtnombre.Location = new System.Drawing.Point(110, 31);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(100, 20);
-            this.txtnombre.TabIndex = 4;
+            this.txtnombre.TabIndex = 1;
             // 
             // txttelefono
             // 
             this.txttelefono.Location = new System.Drawing.Point(348, 31);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(100, 20);
-            this.txttelefono.TabIndex = 6;
+            this.txttelefono.TabIndex = 2;
             // 
             // txtdomicilio
             // 
             this.txtdomicilio.Location = new System.Drawing.Point(110, 75);
             this.txtdomicilio.Name = "txtdomicilio";
             this.txtdomicilio.Size = new System.Drawing.Size(100, 20);
-            this.txtdomicilio.TabIndex = 8;
+            this.txtdomicilio.TabIndex = 3;
             // 
             // txtdni
             // 
             this.txtdni.Location = new System.Drawing.Point(348, 75);
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(100, 20);
-            this.txtdni.TabIndex = 10;
+            this.txtdni.TabIndex = 4;
             // 
             // lblnombre
             // 
@@ -167,7 +167,7 @@
             this.btnagregar.Location = new System.Drawing.Point(23, 161);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
-            this.btnagregar.TabIndex = 15;
+            this.btnagregar.TabIndex = 7;
             this.btnagregar.Text = "Agregar";
             this.btnagregar.UseVisualStyleBackColor = true;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
@@ -177,7 +177,7 @@
             this.btnmodificar.Location = new System.Drawing.Point(150, 161);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(75, 23);
-            this.btnmodificar.TabIndex = 16;
+            this.btnmodificar.TabIndex = 8;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
             this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
@@ -195,14 +195,14 @@
             this.txtnomusuario.Location = new System.Drawing.Point(110, 118);
             this.txtnomusuario.Name = "txtnomusuario";
             this.txtnomusuario.Size = new System.Drawing.Size(100, 20);
-            this.txtnomusuario.TabIndex = 19;
+            this.txtnomusuario.TabIndex = 5;
             // 
             // txtcontraseña
             // 
             this.txtcontraseña.Location = new System.Drawing.Point(348, 118);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(100, 20);
-            this.txtcontraseña.TabIndex = 20;
+            this.txtcontraseña.TabIndex = 6;
             this.txtcontraseña.TextChanged += new System.EventHandler(this.txtcontraseña_TextChanged);
             // 
             // lblcontraseña
@@ -243,7 +243,7 @@
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnlimpiar.Size = new System.Drawing.Size(101, 23);
-            this.btnlimpiar.TabIndex = 23;
+            this.btnlimpiar.TabIndex = 10;
             this.btnlimpiar.Text = "Limpiar Formulario";
             this.btnlimpiar.UseVisualStyleBackColor = true;
             this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
@@ -253,25 +253,27 @@
             this.btneliminar.Location = new System.Drawing.Point(267, 161);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(75, 23);
-            this.btneliminar.TabIndex = 22;
+            this.btneliminar.TabIndex = 9;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // txtidusuario
             // 
+            this.txtidusuario.Enabled = false;
             this.txtidusuario.Location = new System.Drawing.Point(327, 77);
             this.txtidusuario.Name = "txtidusuario";
             this.txtidusuario.Size = new System.Drawing.Size(100, 20);
             this.txtidusuario.TabIndex = 23;
             this.txtidusuario.Text = "0";
+            this.txtidusuario.Visible = false;
             // 
             // btnvolver
             // 
             this.btnvolver.Location = new System.Drawing.Point(481, 454);
             this.btnvolver.Name = "btnvolver";
             this.btnvolver.Size = new System.Drawing.Size(75, 23);
-            this.btnvolver.TabIndex = 23;
+            this.btnvolver.TabIndex = 11;
             this.btnvolver.Text = "Volver";
             this.btnvolver.UseVisualStyleBackColor = true;
             this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);

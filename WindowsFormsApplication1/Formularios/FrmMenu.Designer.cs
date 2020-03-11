@@ -40,7 +40,7 @@
             this.btnousuario.Location = new System.Drawing.Point(76, 119);
             this.btnousuario.Name = "btnousuario";
             this.btnousuario.Size = new System.Drawing.Size(142, 24);
-            this.btnousuario.TabIndex = 1;
+            this.btnousuario.TabIndex = 2;
             this.btnousuario.Text = "Nuevo Usuario";
             this.btnousuario.UseVisualStyleBackColor = true;
             this.btnousuario.Click += new System.EventHandler(this.btnousuario_Click);
@@ -50,7 +50,7 @@
             this.btncliente.Location = new System.Drawing.Point(76, 72);
             this.btncliente.Name = "btncliente";
             this.btncliente.Size = new System.Drawing.Size(142, 24);
-            this.btncliente.TabIndex = 4;
+            this.btncliente.TabIndex = 1;
             this.btncliente.Text = "Nuevo Cliente";
             this.btncliente.UseVisualStyleBackColor = true;
             this.btncliente.Click += new System.EventHandler(this.btncliente_Onclick);
@@ -60,7 +60,7 @@
             this.btnnotadepedido.Location = new System.Drawing.Point(76, 203);
             this.btnnotadepedido.Name = "btnnotadepedido";
             this.btnnotadepedido.Size = new System.Drawing.Size(142, 24);
-            this.btnnotadepedido.TabIndex = 5;
+            this.btnnotadepedido.TabIndex = 4;
             this.btnnotadepedido.Text = "Nota de Pedido";
             this.btnnotadepedido.UseVisualStyleBackColor = true;
             this.btnnotadepedido.Click += new System.EventHandler(this.btnnotadepedido_Click);
@@ -80,7 +80,7 @@
             this.btnservicio.Location = new System.Drawing.Point(76, 162);
             this.btnservicio.Name = "btnservicio";
             this.btnservicio.Size = new System.Drawing.Size(142, 24);
-            this.btnservicio.TabIndex = 7;
+            this.btnservicio.TabIndex = 3;
             this.btnservicio.Text = "Nuevo Servicio";
             this.btnservicio.UseVisualStyleBackColor = true;
             this.btnservicio.Click += new System.EventHandler(this.btnservicio_Click);

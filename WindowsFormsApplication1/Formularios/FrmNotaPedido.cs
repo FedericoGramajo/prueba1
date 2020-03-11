@@ -31,14 +31,14 @@ namespace WindowsFormsApplication1.Formularios
 
 
 
-        SqlConnection coneccion = new SqlConnection("server=.\\SQL_UAI ; database=prueba ; integrated security = true");
+        SqlConnection con = new SqlConnection("server=.\\SQL_UAI ; database=prueba ; integrated security = true");
         //SqlConnection coneccion = new SqlConnection("server=FEDERICO-PC\\SQLEXPRESS ; database=prueba ; integrated security = true");
-        public void autocompletarcli(TextBox cajaTexto)
+      /*  public void autocompletarcli(TextBox cajaTexto, string idcli)
         {
             try
             {
-                coneccion.Open();
-                SqlCommand cmd = new SqlCommand("SELECT nombre from cliente ", coneccion);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT nombre from cliente ", con);
 
                 SqlDataReader dr;
 
@@ -60,7 +60,7 @@ namespace WindowsFormsApplication1.Formularios
             }
             finally
             {
-                coneccion.Close();
+                con.Close();
             }
         }
 
@@ -94,13 +94,22 @@ namespace WindowsFormsApplication1.Formularios
             {
                 coneccion.Close();
             }
-        }
+        }*/
 
         private void FrmNotaPedido_Load(object sender, EventArgs e)
         {
-            autocompletarcli(txtclientenom);
-            autocompletarserv(txttiposerv);
+                  
+            // autocompletarcli(txtclientenom);
+            // autocompletarserv(txttiposerv);
 
+            SqlCommand cm = new SqlCommand("select * from cliente",con);
+            con.Open();
+            SqlDataReader dr = cm.ExecuteReader();
+            while(dr.Read())
+            {
+                comboBox1.Items.Add(dr.GetString(1));
+            }
+            con.Close();
 
             lista = FuncionesServicios.Mostrar();
             dtservicios.DataSource = lista;
@@ -118,19 +127,7 @@ namespace WindowsFormsApplication1.Formularios
 
         }
 
-        private void btnnuevoserv_Click(object sender, EventArgs e)
-        {
-            FrmServicios frm = new FrmServicios(dt);
-            frm.ShowDialog();
-        }
-
-        private void btnpedidos_Click(object sender, EventArgs e)
-        {
-            FrmPedidos frm = new FrmPedidos();
-            frm.ShowDialog();
-            
-        }
-
+  
         public void dtservicios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txttiposerv.Text = dtservicios.Rows[e.RowIndex].Cells["nomcorto"].Value.ToString();
@@ -148,6 +145,39 @@ namespace WindowsFormsApplication1.Formularios
             sum = sum - guard;
             //sum = guard;
             lbltotal.Text = Convert.ToString(sum);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand cm = new SqlCommand("select * from cliente where nombre = '" + comboBox1.Text + "' ", con);
+            con.Open();
+            SqlDataReader dr = cm.ExecuteReader();
+            if (dr.Read() == true)
+            {
+                txtidcliente.Text = dr["idcliente"].ToString();
+            }
+            con.Close();
+        }
+
+      private void btnnuevoserv_Click(object sender, EventArgs e)
+        {
+            FrmServicios frm = new FrmServicios(dt);
+            frm.ShowDialog();
+        }
+
+        private void btnpedidos_Click(object sender, EventArgs e)
+        {
+            FrmPedidos frm = new FrmPedidos();
+            frm.ShowDialog();
+            
+        }
+
+        private void btnvolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmMenu frm = new FrmMenu(dt);
+            frm.Show();
+
         }
 
 

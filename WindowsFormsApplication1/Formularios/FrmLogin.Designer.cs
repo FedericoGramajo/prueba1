@@ -68,7 +68,7 @@
             this.txtcontraseña.Location = new System.Drawing.Point(136, 100);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(176, 20);
-            this.txtcontraseña.TabIndex = 3;
+            this.txtcontraseña.TabIndex = 1;
             this.txtcontraseña.TextChanged += new System.EventHandler(this.txtcontraseña_TextChanged);
             // 
             // lblbienvenido
@@ -91,7 +91,7 @@
             this.btningresar.UseVisualStyleBackColor = true;
             this.btningresar.Click += new System.EventHandler(this.btningresar_OnClick);
             // 
-            // Login
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,7 +102,7 @@
             this.Controls.Add(this.lblcontraseña);
             this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.txtusuario);
-            this.Name = "Login";
+            this.Name = "FrmLogin";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

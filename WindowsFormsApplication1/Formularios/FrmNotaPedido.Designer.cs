@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtclientenom = new System.Windows.Forms.TextBox();
             this.txtusuarionom = new System.Windows.Forms.TextBox();
             this.txttiposerv = new System.Windows.Forms.TextBox();
             this.txtidcliente = new System.Windows.Forms.TextBox();
@@ -44,6 +43,8 @@
             this.dtservicios = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
             this.btneliminar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnvolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtservicios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,15 +84,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Tipo de Servicio";
             // 
-            // txtclientenom
-            // 
-            this.txtclientenom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtclientenom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtclientenom.Location = new System.Drawing.Point(134, 73);
-            this.txtclientenom.Name = "txtclientenom";
-            this.txtclientenom.Size = new System.Drawing.Size(100, 20);
-            this.txtclientenom.TabIndex = 4;
-            // 
             // txtusuarionom
             // 
             this.txtusuarionom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -109,7 +101,7 @@
             this.txttiposerv.Location = new System.Drawing.Point(134, 173);
             this.txttiposerv.Name = "txttiposerv";
             this.txttiposerv.Size = new System.Drawing.Size(100, 20);
-            this.txttiposerv.TabIndex = 6;
+            this.txttiposerv.TabIndex = 1;
             // 
             // txtidcliente
             // 
@@ -143,7 +135,7 @@
             this.btnnuevoserv.Location = new System.Drawing.Point(513, 18);
             this.btnnuevoserv.Name = "btnnuevoserv";
             this.btnnuevoserv.Size = new System.Drawing.Size(61, 49);
-            this.btnnuevoserv.TabIndex = 11;
+            this.btnnuevoserv.TabIndex = 5;
             this.btnnuevoserv.Text = "Nuevo servicio";
             this.btnnuevoserv.UseVisualStyleBackColor = true;
             this.btnnuevoserv.Click += new System.EventHandler(this.btnnuevoserv_Click);
@@ -153,7 +145,7 @@
             this.btnnuevoped.Location = new System.Drawing.Point(589, 18);
             this.btnnuevoped.Name = "btnnuevoped";
             this.btnnuevoped.Size = new System.Drawing.Size(61, 49);
-            this.btnnuevoped.TabIndex = 12;
+            this.btnnuevoped.TabIndex = 6;
             this.btnnuevoped.Text = "Nuevo Pedido";
             this.btnnuevoped.UseVisualStyleBackColor = true;
             // 
@@ -162,7 +154,7 @@
             this.btnpedidos.Location = new System.Drawing.Point(434, 18);
             this.btnpedidos.Name = "btnpedidos";
             this.btnpedidos.Size = new System.Drawing.Size(61, 49);
-            this.btnpedidos.TabIndex = 13;
+            this.btnpedidos.TabIndex = 4;
             this.btnpedidos.Text = "Notas de Pedido";
             this.btnpedidos.UseVisualStyleBackColor = true;
             this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click);
@@ -195,16 +187,39 @@
             this.btneliminar.Location = new System.Drawing.Point(484, 142);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(75, 23);
-            this.btneliminar.TabIndex = 16;
+            this.btneliminar.TabIndex = 3;
             this.btneliminar.Text = "Eliminar servicio";
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(134, 73);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 21);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // btnvolver
+            // 
+            this.btnvolver.Location = new System.Drawing.Point(605, 371);
+            this.btnvolver.Name = "btnvolver";
+            this.btnvolver.Size = new System.Drawing.Size(75, 23);
+            this.btnvolver.TabIndex = 7;
+            this.btnvolver.Text = "Volver";
+            this.btnvolver.UseVisualStyleBackColor = true;
+            this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);
             // 
             // FrmNotaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 372);
+            this.ClientSize = new System.Drawing.Size(692, 406);
+            this.Controls.Add(this.btnvolver);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dtservicios);
@@ -216,7 +231,6 @@
             this.Controls.Add(this.txtidcliente);
             this.Controls.Add(this.txttiposerv);
             this.Controls.Add(this.txtusuarionom);
-            this.Controls.Add(this.txtclientenom);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -236,7 +250,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtclientenom;
         private System.Windows.Forms.TextBox txtusuarionom;
         private System.Windows.Forms.TextBox txttiposerv;
         private System.Windows.Forms.TextBox txtidcliente;
@@ -248,5 +261,7 @@
         private System.Windows.Forms.DataGridView dtservicios;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnvolver;
     }
 }

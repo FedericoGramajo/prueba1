@@ -126,7 +126,7 @@
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnlimpiar.Size = new System.Drawing.Size(101, 23);
-            this.btnlimpiar.TabIndex = 20;
+            this.btnlimpiar.TabIndex = 9;
             this.btnlimpiar.Text = "Limpiar Formulario";
             this.btnlimpiar.UseVisualStyleBackColor = true;
             this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
@@ -144,14 +144,14 @@
             this.txtfechadato.Location = new System.Drawing.Point(552, 75);
             this.txtfechadato.Name = "txtfechadato";
             this.txtfechadato.Size = new System.Drawing.Size(100, 20);
-            this.txtfechadato.TabIndex = 18;
+            this.txtfechadato.TabIndex = 5;
             // 
             // btneliminar
             // 
             this.btneliminar.Location = new System.Drawing.Point(373, 129);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(75, 23);
-            this.btneliminar.TabIndex = 17;
+            this.btneliminar.TabIndex = 8;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
@@ -161,7 +161,7 @@
             this.btnmodificar.Location = new System.Drawing.Point(204, 129);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(75, 23);
-            this.btnmodificar.TabIndex = 16;
+            this.btnmodificar.TabIndex = 7;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
             this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
@@ -171,7 +171,7 @@
             this.btnagregar.Location = new System.Drawing.Point(46, 129);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
-            this.btnagregar.TabIndex = 15;
+            this.btnagregar.TabIndex = 6;
             this.btnagregar.Text = "Agregar";
             this.btnagregar.UseVisualStyleBackColor = true;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
@@ -215,14 +215,14 @@
             this.txtprecioxunmedida.Location = new System.Drawing.Point(348, 72);
             this.txtprecioxunmedida.Name = "txtprecioxunmedida";
             this.txtprecioxunmedida.Size = new System.Drawing.Size(100, 20);
-            this.txtprecioxunmedida.TabIndex = 10;
+            this.txtprecioxunmedida.TabIndex = 4;
             // 
             // txtdescripcion
             // 
             this.txtdescripcion.Location = new System.Drawing.Point(348, 34);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(304, 20);
-            this.txtdescripcion.TabIndex = 8;
+            this.txtdescripcion.TabIndex = 2;
             // 
             // txtunmedida
             // 
@@ -230,29 +230,31 @@
             this.txtunmedida.Location = new System.Drawing.Point(93, 72);
             this.txtunmedida.Name = "txtunmedida";
             this.txtunmedida.Size = new System.Drawing.Size(100, 20);
-            this.txtunmedida.TabIndex = 6;
+            this.txtunmedida.TabIndex = 3;
             // 
             // txtnomcorto
             // 
             this.txtnomcorto.Location = new System.Drawing.Point(93, 31);
             this.txtnomcorto.Name = "txtnomcorto";
             this.txtnomcorto.Size = new System.Drawing.Size(100, 20);
-            this.txtnomcorto.TabIndex = 4;
+            this.txtnomcorto.TabIndex = 1;
             // 
             // txtidservicio
             // 
+            this.txtidservicio.Enabled = false;
             this.txtidservicio.Location = new System.Drawing.Point(272, 41);
             this.txtidservicio.Name = "txtidservicio";
             this.txtidservicio.Size = new System.Drawing.Size(100, 20);
             this.txtidservicio.TabIndex = 29;
             this.txtidservicio.Text = "0";
+            this.txtidservicio.Visible = false;
             // 
             // btnvolver
             // 
             this.btnvolver.Location = new System.Drawing.Point(621, 456);
             this.btnvolver.Name = "btnvolver";
             this.btnvolver.Size = new System.Drawing.Size(75, 23);
-            this.btnvolver.TabIndex = 30;
+            this.btnvolver.TabIndex = 10;
             this.btnvolver.Text = "Volver";
             this.btnvolver.UseVisualStyleBackColor = true;
             this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click_1);

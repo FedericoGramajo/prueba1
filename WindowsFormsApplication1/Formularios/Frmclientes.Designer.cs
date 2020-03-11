@@ -79,7 +79,7 @@
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnlimpiar.Size = new System.Drawing.Size(101, 23);
-            this.btnlimpiar.TabIndex = 18;
+            this.btnlimpiar.TabIndex = 8;
             this.btnlimpiar.Text = "Limpiar Formulario";
             this.btnlimpiar.UseVisualStyleBackColor = true;
             this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
@@ -89,7 +89,7 @@
             this.btneliminar.Location = new System.Drawing.Point(281, 119);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(75, 23);
-            this.btneliminar.TabIndex = 17;
+            this.btneliminar.TabIndex = 7;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
@@ -99,7 +99,7 @@
             this.btnmodificar.Location = new System.Drawing.Point(135, 119);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(75, 23);
-            this.btnmodificar.TabIndex = 16;
+            this.btnmodificar.TabIndex = 6;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
             this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
@@ -109,7 +109,7 @@
             this.btnagregar.Location = new System.Drawing.Point(6, 119);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
-            this.btnagregar.TabIndex = 15;
+            this.btnagregar.TabIndex = 5;
             this.btnagregar.Text = "Agregar";
             this.btnagregar.UseVisualStyleBackColor = true;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
@@ -151,28 +151,28 @@
             this.txtdni.Location = new System.Drawing.Point(348, 75);
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(100, 20);
-            this.txtdni.TabIndex = 10;
+            this.txtdni.TabIndex = 4;
             // 
             // txtdomicilio
             // 
             this.txtdomicilio.Location = new System.Drawing.Point(110, 75);
             this.txtdomicilio.Name = "txtdomicilio";
             this.txtdomicilio.Size = new System.Drawing.Size(100, 20);
-            this.txtdomicilio.TabIndex = 8;
+            this.txtdomicilio.TabIndex = 3;
             // 
             // txttelefono
             // 
             this.txttelefono.Location = new System.Drawing.Point(348, 31);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(100, 20);
-            this.txttelefono.TabIndex = 6;
+            this.txttelefono.TabIndex = 2;
             // 
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(110, 31);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(100, 20);
-            this.txtnombre.TabIndex = 4;
+            this.txtnombre.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -221,18 +221,20 @@
             // 
             // txtidcliente
             // 
+            this.txtidcliente.Enabled = false;
             this.txtidcliente.Location = new System.Drawing.Point(388, 85);
             this.txtidcliente.Name = "txtidcliente";
             this.txtidcliente.Size = new System.Drawing.Size(64, 20);
             this.txtidcliente.TabIndex = 16;
             this.txtidcliente.Text = "0";
+            this.txtidcliente.Visible = false;
             // 
             // btnvolver
             // 
             this.btnvolver.Location = new System.Drawing.Point(497, 415);
             this.btnvolver.Name = "btnvolver";
             this.btnvolver.Size = new System.Drawing.Size(75, 23);
-            this.btnvolver.TabIndex = 18;
+            this.btnvolver.TabIndex = 9;
             this.btnvolver.Text = "Volver";
             this.btnvolver.UseVisualStyleBackColor = true;
             this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);
